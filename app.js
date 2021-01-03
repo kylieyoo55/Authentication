@@ -94,10 +94,8 @@ passport.use(new GoogleStrategy({
 
 // Facebook strategy for use by Passport.
 passport.use(new FacebookStrategy({ //This is class constructor argument telling Passport to create a new Facebook Auth Strategy
-    clientID: "3827734500624489",
-    //process.env.FACEBOOK_CLIENT_ID,//The App ID generated when app was created on https://developers.facebook.com/
-    clientSecret: "c23e2f283bdde31329577447b4c7bc8d",
-    //process.env.FACEBOOK_CLIENT_SECRET,//The App Secret generated when app was created on https://developers.facebook.com/
+    clientID: process.env.FACEBOOK_CLIENT_ID,//The App ID generated when app was created on https://developers.facebook.com/
+    clientSecret: process.env.FACEBOOK_CLIENT_SECRET,//The App Secret generated when app was created on https://developers.facebook.com/
     callbackURL: 'http://localhost:3000/auth/facebook/secrets',
     profile: ['id', 'displayName'] // You have the option to specify the profile objects you want returned
   },
